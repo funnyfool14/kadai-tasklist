@@ -8,7 +8,7 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>ステータス</th>
+                    <th>status</th>
                     <th>タスク</th>
                 </tr>
             </thead>
