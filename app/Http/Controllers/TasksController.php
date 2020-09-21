@@ -41,7 +41,11 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:10'
+        ]);        
         $task = new Task;
+        $task->name = $request->name;
         $task->content = $request->content;
         $task->save();
         return redirect('/');
@@ -85,7 +89,11 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|max:10'
+        ]);
         $task = Task::findOrFail($id);
+        $task->name = $request->name;
         $task->content = $request->content;
         $task->save();
         return redirect('/');
